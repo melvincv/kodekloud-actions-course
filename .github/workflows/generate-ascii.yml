@@ -38,5 +38,3 @@ jobs:
       - name: Read file
         run: cat dragon.txt
       
-      - name: deploy
-        run: echo Deploying...
