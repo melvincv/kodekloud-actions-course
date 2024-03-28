@@ -1,0 +1,17 @@
+name: Matrix Strategy
+
+on: [push]
+
+jobs:
+  deploy:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        images: [hello-world, alpine]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Echo Docker details
+        run: docker info
+      
+      - name: Run image on ${{ matrix.os }}
+        run: docker run --rm ${{ matrix.images }}
