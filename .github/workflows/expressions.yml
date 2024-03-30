@@ -1,0 +1,17 @@
+name: Expressions Test
+
+on: push
+
+jobs:
+  first-job:
+    # if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: list files
+        run: ls
+
+      - name: read file
+        run: cat README.md
