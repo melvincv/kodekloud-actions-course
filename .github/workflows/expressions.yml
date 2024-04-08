@@ -5,7 +5,7 @@ on: push
 jobs:
   first-job:
     if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, gen01]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
